@@ -1,0 +1,159 @@
+html, body {
+    margin: 0;
+    background-color: #1B244A;
+    height: 100%;
+    font-family: Verdana;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 250px auto 250px;
+    grid-template-rows: repeat(8, 100px);
+    grid-column-gap: 40px;
+    grid-row-gap: 20px;
+    justify-content: center;
+    height: 100%;
+}
+
+.timer-el {
+    font-size: 20px;
+    color: #EEEEEE;
+    text-align: center;
+    background-color: #080001;
+    border-radius: 20px;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.timer-el h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.timer {
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    color: #FFEA00;
+    font-size: 30px;
+}
+
+.home, .guest, .period-el {
+    font-size: 20px;
+    color: #EEEEEE;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.home, .guest {
+    border: 2px white solid;
+}
+
+.home {
+    grid-column: 1 / 2;
+    grid-row: 3 / 5;
+}
+
+.guest {
+    grid-column: 3 / 4;
+    grid-row: 3 / 5;
+}
+
+.score-home, .score-guest {
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    background-color: #080001;
+    color: #F94F6D;
+    font-size: 60px;
+    padding: 10px;
+    margin-top: -10px;
+}
+
+button {
+    border-radius: 5px;
+    background-color: #1B244A;
+    color: #9AABD8;
+    border-color: #9AABD8;
+    outline: none;
+    border-style: solid;
+    transition: none;
+    cursor: pointer;
+}
+
+.buttons-home, .buttons-guest {
+    height: 30px;
+    margin-top: 15px;
+}
+
+.period-el {
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+}
+
+.period {
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    background-color: #080001;
+    color: #49fb35;
+    font-size: 60px;
+    padding: 10px;
+}
+
+.new-game {
+  color: white;
+  font-weight: bold;
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+  height: 50%;
+  width: 100%;
+}
+
+@media (min-width: 100px) and (max-width: 389px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        zoom: 80%;
+    }
+
+    .timer-el {
+        width: 230px;
+        padding-bottom: 10px;
+    }
+
+    .buttons-home, .buttons-guest {
+        margin-bottom: 23px;
+    }
+    
+    .period-el {
+        margin-top: -30px;
+    }
+
+    .new-game {
+        height: 8%;
+        width: 230px;
+      } 
+     }
+
+     @media (min-width: 390px) and (max-width: 767px) {
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .timer-el {
+            width: 235px;
+            padding-bottom: 10px;
+        }
+    
+        .buttons-home, .buttons-guest {
+            margin-bottom: 23px;
+        }
+        
+        .period-el {
+            margin-top: -30px;
+        }
+    
+        .new-game {
+            height: 8%;
+            width: 235px;
+          } 
+         }

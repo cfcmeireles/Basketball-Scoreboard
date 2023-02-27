@@ -41,18 +41,21 @@ guest.forEach((el, index) => {
     });
   });
 
-  newGameBtn.addEventListener("click", () => {
-    time = 720;
-    scoreHome = 0;
-    scoreGuest = 0;
-    scoreboardHome.innerHTML = scoreHome;
-    scoreboardGuest.innerHTML = scoreGuest;
-    homeTitle.style.color = "white";
-    guestTitle.style.color = "white";
-    periodTimer.innerHTML = 1;
-    setInterval(updateCountdown, 1000);
-  });
-
+  function newGame() {
+    newGameBtn.addEventListener("click", () => {
+      clearInterval(interval);
+      time = 720;
+      scoreHome = 0;
+      scoreGuest = 0;
+      scoreboardHome.innerHTML = scoreHome;
+      scoreboardGuest.innerHTML = scoreGuest;
+      homeTitle.style.color = "white";
+      guestTitle.style.color = "white";
+      periodTimer.innerHTML = 1;
+      interval = setInterval(updateCountdown, 1000);
+    });
+  }
+  
   function updateCountdown() {
     if (time < 0) {
       time = 720;
@@ -63,7 +66,7 @@ guest.forEach((el, index) => {
     if (time === 0 && period === 4) {
       clearInterval(interval);
     }
-
+    
     let minutes = Math.floor(time / 60);
     let seconds = time % 60;
     
@@ -73,7 +76,8 @@ guest.forEach((el, index) => {
     timer.innerHTML = `${minutes}:${seconds}`;
     time--;
   }
-
+  
   let interval = setInterval(updateCountdown, 1000);
+  newGame();
 
 }) ();
